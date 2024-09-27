@@ -20,13 +20,13 @@ You can use either `curl` or `wget` to download and run the script in a single c
 
 ### Using `curl`
 ```bash
-curl -L https://raw.githubusercontent.com/turbosource-marialis/machtiani/main/install.sh | bash
+curl -L https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
 
 ```
 
 ### Using `wget`
 ```bash
-wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani/main/install.sh | bash
+wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
 
 ```
 
