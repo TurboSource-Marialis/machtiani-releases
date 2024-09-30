@@ -45,6 +45,22 @@ curl -L "$REPO/$BINARY" -o "$INSTALL_DIR/machtiani"
 # Make the binary executable
 chmod +x "$INSTALL_DIR/machtiani"
 
+# Create the configuration file
+CONFIG_FILE="$HOME/.machtiani-config.yml"
+cat <<EOL > "$CONFIG_FILE"
+environment:
+  MODEL_API_KEY: ""
+  MACHTIANI_URL: "https://api.machtiani.chat"
+  MACHTIANI_REPO_MANAGER_URL: "https://api.machtiani.chat"
+  CODE_HOST_API_KEY: ""
+  API_GATEWAY_HOST_KEY: ""
+  API_GATEWAY_HOST_VALUE: ""
+  CONTENT_TYPE_KEY: "Content-Type" # Header key for Content-Type
+  CONTENT_TYPE_VALUE: "application/json" # Header value for Content-Type
+EOL
+
+echo "Configuration file created at $CONFIG_FILE"
+
 # Check if INSTALL_DIR is in the user's PATH
 if [[ ":$PATH:" == *":$INSTALL_DIR:"* ]]; then
     echo "$INSTALL_DIR is already in your PATH."
