@@ -5,10 +5,13 @@
 
 Run commands directly in your git project directory in the terminal.
 
-![Direct Prompt Example](images/default-result.png)
+![Direct Prompt Example](images/keystone-confirm.png)
 
 Continue or edit a previous conversation.
-![File Example](images/file-conversion.png)
+![File Example](images/keystone-chat-new-prompt.png)
+
+Continue the chat
+![File Example](images/keystone-chat-new-prompt-confirm.png)
 
 1. **Direct Prompt:**
    ```bash
