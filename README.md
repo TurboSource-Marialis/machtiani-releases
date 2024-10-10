@@ -34,11 +34,9 @@
 
 ## How it Works
 
-Machtiani is tightly coupled to git and employs a clever strategy to compress the file retrieval stage, making it usable on very large projects.
+Machtiani is tightly coupled to git and employs a clever strategy to compress the file retrieval stage, making it usable on very large projects. There are rough edges (silent errors in places) and estimated input tokens is off when syncing and storing, but it works great in our experience and machtiani project was built with machtiani.
 
-Although we want to say it's not yet ready for larger projects, we have experimented with it on projects with over 1400 versioned files, with no noticeable difference in accuracy from projects with only a few files. It is a little slow on larger projects, but this is due to not yet optimizing some I/O bound processes and should improve over time. If you plan to use it on large projects, make sure to add unhelpful files (e.g., dependency lock files like `package-lock.json` or binaries) to your `.machtiani.ignore`.
-
-Currently, due to our retrieval strategy that manages context well, we don't do chunking when indexing. So in the rare occurrence (more likely with larger projects) of errors when trying to chat, run your chat commands with `--match-strength high`.
+Although we want to say it's not yet ready for larger projects, we have experimented with it on projects with over 1400 versioned files, with no noticeable difference in accuracy from projects with only a few files. In the rare occurrence (more likely with larger projects) of errors when trying to chat from context getting exeeded, run your chat commands with `--match-strength high`.
 
 ## Installation Instructions
 
