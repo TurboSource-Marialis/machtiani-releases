@@ -3,33 +3,33 @@
 
 **Machtiani** is a command-line interface (CLI) tool designed to facilitate code chat and information retrieval from code repositories. It allows users to interact with their codebases by asking questions and retrieving relevant information from files in the project, utilizing language models for processing and generating responses. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
 
-`machtiani "<your prompt>"`
-
-![Direct Prompt Example](images/keystone-confirm.png)
-
-Continue or edit a previous conversation.
-![File Example](images/keystone-chat-new-prompt.png)
-
-`machtiani --file .machtinia/chat/<chat>.md`
-
-![File Example](images/keystone-chat-new-prompt-results.png)
-
-1. **Direct Prompt:**
-   ```bash
-   ```
-2. **Continue a previous chat:**
-   ```bash
-   machtiani --file .machtiani/chat/add_state_endpoint.md
-   ```
-
-3. **Make its results more selective:**
-   ```bash
-   machtiani "Add a new endpoint to get stats." --match-strength high
-   ```
-
-4. **Add a git project so you can chat with it:**
+1. **Add a git project**
    ```bash
    machtiani git-store --branch master
+   ```
+
+2. **Ask, direct...**
+   ```bash
+   machtiani "<your prompt>"
+   ```
+   ![Direct Prompt Example](images/keystone-confirm.png)
+
+3. **Continue the chat**
+   
+   Directly edit the markdown chat convo in your preferred code editor. Let's ask it to create a setup script for TOTP 2-factor auth!
+   
+   ![File Example](images/keystone-chat-new-prompt.png)
+   
+4. **Fire it off, again!***
+
+   ```bash
+   machtiani --file .machtiniani/chat/<chat>.md
+   ```
+   ![File Example](images/keystone-chat-new-prompt-results.png)
+
+5. **Sync up latest changes to project**
+   ```bash
+   machtiani git-sync --branch-name "<default-branch>"
    ```
 
 ## How it Works
