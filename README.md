@@ -6,12 +6,15 @@
 
 Run commands directly in your git project directory in the terminal.
 
+![Direct Prompt Example](images/default-result.png)
+
+Continue or edit a previous conversion.
+![File Example](images/file-conversion.png)
+
 1. **Direct Prompt:**
    ```bash
    machtiani "Add a new endpoint to get stats."
    ```
-   ![Direct Prompt Example](images/default-result.png)
-
 2. **Continue a previous chat:**
    ```bash
    machtiani --file .machtiani/chat/add_state_endpoint.md
