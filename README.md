@@ -3,12 +3,11 @@
 
 **Machtiani** is a command-line interface (CLI) tool designed to facilitate code chat and information retrieval from code repositories. It allows users to interact with their codebases by asking questions and retrieving relevant information from files in the project, utilizing language models for processing and generating responses. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
 
-
 Run commands directly in your git project directory in the terminal.
 
 ![Direct Prompt Example](images/default-result.png)
 
-Continue or edit a previous conversion.
+Continue or edit a previous conversation.
 ![File Example](images/file-conversion.png)
 
 1. **Direct Prompt:**
@@ -32,9 +31,11 @@ Continue or edit a previous conversion.
 
 ## How it Works
 
-Machtiani is tightly coupled to git. And it employs a clever strategy to compresseses the file retrieval retrieval stage, thereby making it useable on very large projects.
+Machtiani is tightly coupled to git and employs a clever strategy to compress the file retrieval stage, making it usable on very large projects.
 
-Although we want to say it's not yet ready for larger projects, we played around with it on projects with over 1400 versioned files with no noticeable difference in accuracy from a project with only a few files. It's a little slow on larger projects, but this is because of not yet optimizing some i/o bound processeses and should be improved overtime.
+Although we want to say it's not yet ready for larger projects, we have experimented with it on projects with over 1400 versioned files, with no noticeable difference in accuracy from projects with only a few files. It is a little slow on larger projects, but this is due to not yet optimizing some I/O bound processes and should improve over time. If you plan to use it on large projects, make sure to add unhelpful files (e.g., dependency lock files like `package-lock.json` or binaries) to your `.machtiani.ignore`.
+
+Currently, due to our retrieval strategy that manages context well, we don't do chunking when indexing. So in the rare occurrence (more likely with larger projects) of errors when trying to chat, run your chat commands with `--match-strength high`.
 
 ## Installation Instructions
 
@@ -43,13 +44,11 @@ You can use either `curl` or `wget` to download and run the script in a single c
 ### Using `curl`
 ```bash
 curl -L https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
-
 ```
 
 ### Using `wget`
 ```bash
 wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
-
 ```
 
 ### Post-Installation
@@ -64,28 +63,30 @@ wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani-relea
   source ~/.bashrc  # for bash
   source ~/.zshrc   # for zsh
   ```
+
 ### Configure
 
 Edit the `~/.machtiani-config.yml`.
 
-   ```yaml
-   environment:
-     MODEL_API_KEY: "your-openai-api-key"
-     CODE_HOST_API_KEY: "your-github-key"
-     MACHTIANI_URL: "http://localhost:5071"
-     MACHTIANI_REPO_MANAGER_URL: "http://localhost:5070"
-     API_GATEWAY_HOST_KEY: "x-api-gateway-host"
-     API_GATEWAY_HOST_VALUE: "your-api-gateway-value"
-     CONTENT_TYPE_KEY: "Content-Type"
-     CONTENT_TYPE_VALUE: "application/json"
-   ```
-   **CODE_HOST_API_KEY**
+```yaml
+environment:
+  MODEL_API_KEY: "your-openai-api-key"
+  CODE_HOST_API_KEY: "your-github-key"
+  MACHTIANI_URL: "http://localhost:5071"
+  MACHTIANI_REPO_MANAGER_URL: "http://localhost:5070"
+  API_GATEWAY_HOST_KEY: "x-api-gateway-host"
+  API_GATEWAY_HOST_VALUE: "your-api-gateway-value"
+  CONTENT_TYPE_KEY: "Content-Type"
+  CONTENT_TYPE_VALUE: "application/json"
+```
 
-   Your github api key must have repo scopes, so `machtiani` can pull github code to process. It also tests push access (but doesn't push any changes), to prevent users from chatting with projects that don't belong to them.
+**CODE_HOST_API_KEY**
 
-   **MODEL_API_KEY**
+Your GitHub API key must have repo scopes, so `machtiani` can pull GitHub code to process. It also tests push access (but doesn't push any changes) to prevent users from chatting with projects that don't belong to them.
 
-   Your OpenAI api key. Plan is to make it work with other models, especially self-hosted ones.
+**MODEL_API_KEY**
+
+Your OpenAI API key. The plan is to make it work with other models, especially self-hosted ones.
 
 ### Uninstall
 To remove the `machtiani` tool, simply delete the binary:
@@ -112,12 +113,11 @@ machtiani [flags] [prompt]
 - `-model string` (optional): Model to use. Options include `gpt-4o` or `gpt-4o-mini`. Default is `gpt-4o-mini`.
 - `-match-strength string` (optional): Match strength options are `high`, `mid`, or `low`. Default is `mid`.
 - `-mode string` (optional): Search mode, which can be `pure-chat`, `commit`, or `super`. Default is `commit`.
-- `--force` (optional): Skip confirmation prompt and proceed with the operation.
+- `--force` (optional): Skip the confirmation prompt and proceed with the operation.
 
 ### Example Usage
 
 1. **Providing a direct prompt:**
-
    ```bash
    machtiani "Add a new endpoint to get stats."
    ```
@@ -128,13 +128,11 @@ machtiani [flags] [prompt]
    ```
 
 3. **Specifying additional parameters:**
-
    ```bash
    machtiani "Add a new endpoint to get stats." --model gpt-4o --mode pure-chat --match-strength high
    ```
 
 4. **Using the `--force` flag to skip confirmation:**
-
    ```bash
    machtiani git-store --branch master --force
    ```
