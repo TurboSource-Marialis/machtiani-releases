@@ -3,6 +3,8 @@
 
 **Machtiani** is a command-line interface (CLI) tool designed to facilitate code chat and information retrieval from code repositories. It allows users to interact with their codebases by asking questions and retrieving relevant information from files in the project, utilizing language models for processing and generating responses. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
 
+[Join our discord server!](https://discord.gg/y3TR3d8Hxf)
+
 ***For now, it only work on GitHub projects you own or have push access to. If you don't have either, use it against a locally cloned fork that you own or have push rights to.***
 
 1. **Add a git project**
