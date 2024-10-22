@@ -192,6 +192,7 @@ machtiani git-delete
 
 ### Ignoring Files with `.machtiani.ignore`
 
+***For now, you'll have to specify the full path of every file. No pattern-matching or ignoring a full directory of files. For now!***
 You can ignore any binary files by providing the full path, such as images, etc. To exclude specific files from being processed by the application, you can create a `.machtiani.ignore` file in the root of your project directory. The files listed in this file will be ignored during the retrieval process.
 
 #### Example `.machtiani.ignore` file:
