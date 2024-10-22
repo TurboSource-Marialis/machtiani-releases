@@ -97,19 +97,19 @@ environment:
   CONTENT_TYPE_VALUE: "application/json"
 ```
 
-***Only edit the following fields.
+***Only edit the following fields.***
 
-**API_GATEWAY_HOST_VALUE**
+**1. API_GATEWAY_HOST_VALUE**
 
 The Rapid API Key you got from [subscribing](https://rapidapi.com/machtiani-chat-machtiani-chat-default/api/machtiani2/playground/apiendpoint_ad97af86-a38b-455f-a488-c72aab891378).
 
 This is not `API_GATEWAY_HOST_KEY` field. You are placing your Rapid API key in `API_GATEWAY_HOST_VALUE`.
 
-**CODE_HOST_API_KEY**
+**2. CODE_HOST_API_KEY**
 
 Your GitHub API key must have repo scopes, so `machtiani` can pull GitHub code to process. It also tests push access (but doesn't push any changes) to prevent users from chatting with projects that don't belong to them.
 
-**MODEL_API_KEY**
+**3. MODEL_API_KEY**
 
 Your OpenAI API key.
 
