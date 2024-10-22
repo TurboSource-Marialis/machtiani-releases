@@ -67,7 +67,7 @@ wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani-relea
 
 ### Configure
 
-Edit the `~/.machtiani-config.yml`.
+Edit the `~/.machtiani-config.yml`. You'll need an Github API key and OpenAI.
 
 ```yaml
 environment:
@@ -87,7 +87,11 @@ Your GitHub API key must have repo scopes, so `machtiani` can pull GitHub code t
 
 **MODEL_API_KEY**
 
-Your OpenAI API key. The plan is to make it work with other models, especially self-hosted ones.
+Your OpenAI API key.
+
+**WARNING: you are responsible for any costs incured for your requests with your OpenAPI key. Although machtiani cli does provide estimates of token usage for storing and syncing as a courtesy, it's only an estimate of input token usage and not ouptut. There are no guarantees as to its accuracy. Furthermore, there is no estimate for input or output for prompt operations. It's recommended you set usage limits directly with OpenAPI to avoid unexpected costs.**
+
+The plan is to make it work with other models, especially self-hosted ones.
 
 ### Uninstall
 To remove the `machtiani` tool, simply delete the binary:
