@@ -49,14 +49,14 @@ chmod +x "$INSTALL_DIR/machtiani"
 CONFIG_FILE="$HOME/.machtiani-config.yml"
 cat <<EOL > "$CONFIG_FILE"
 environment:
-  MODEL_API_KEY: ""
-  MACHTIANI_URL: "https://api.machtiani.chat"
-  MACHTIANI_REPO_MANAGER_URL: "https://api.machtiani.chat"
-  CODE_HOST_API_KEY: ""
-  API_GATEWAY_HOST_KEY: ""
-  API_GATEWAY_HOST_VALUE: ""
-  CONTENT_TYPE_KEY: "Content-Type" # Header key for Content-Type
-  CONTENT_TYPE_VALUE: "application/json" # Header value for Content-Type
+  API_GATEWAY_HOST_VALUE: "" # Your machtiani RapidAPI Key
+  MODEL_API_KEY: "" # Your OpenAPI Key
+  CODE_HOST_API_KEY: "" # Your Github API Key (ensure it has repo scopes)
+  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com" # Don't change
+  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com" # Don't change
+  CONTENT_TYPE_KEY: "Content-Type" # Header key for Content-Type # Don't change
+  CONTENT_TYPE_VALUE: "application/json" # Header value for Content-Type # Don't change
+  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key" # Don't change
 EOL
 
 echo "Configuration file created at $CONFIG_FILE"
