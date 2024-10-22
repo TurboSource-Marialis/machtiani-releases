@@ -33,6 +33,13 @@
    ```
    ![File Example](images/keystone-chat-new-prompt-results.png)
 
+
+   You can also run it based purely on the chat, without file retrieval.
+
+   ```bash
+   machtiani --file .machtiniani/chat/<chat>.md --mode pure-chat
+   ```
+
 5. **Sync latest commit changes to machtiani**
    ```bash
    machtiani git-sync --branch-name "<default-branch>"
