@@ -40,16 +40,28 @@
 ```bash
    machtiani status
    ```
-## Installation Instructions
+## Setup and Installation Instructions
+
+### Get Machtiani API Key
+
+1. Go to [RapidAPI](https://rapidapi.com/hub).
+
+   You'll have to sign up here if you don't have a RapidAPI account.
+
+2. Go to the [machtiani listing](https://rapidapi.com/machtiani-chat-machtiani-chat-default/api/machtiani2/pricing)
+
+   Select the plan you want. After selection, you'll be redirected to your X-Rapid-API-Key (or go [here](https://rapidapi.com/machtiani-chat-machtiani-chat-default/api/machtiani2/playground/apiendpoint_ad97af86-a38b-455f-a488-c72aab891378) to get the key after signing up for a plan).
+
+### Install
 
 You can use either `curl` or `wget` to download and run the script in a single command:
 
-### Using `curl`
+#### Using `curl`
 ```bash
 curl -L https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
 ```
 
-### Using `wget`
+#### Using `wget`
 ```bash
 wget -O - https://raw.githubusercontent.com/turbosource-marialis/machtiani-releases/main/install.sh | bash
 ```
@@ -73,15 +85,23 @@ Edit the `~/.machtiani-config.yml`. You'll need an Github API key and OpenAI.
 
 ```yaml
 environment:
-  MODEL_API_KEY: "your-openai-api-key"
-  CODE_HOST_API_KEY: "your-github-key"
-  MACHTIANI_URL: "http://localhost:5071"
-  MACHTIANI_REPO_MANAGER_URL: "http://localhost:5070"
-  API_GATEWAY_HOST_KEY: "x-api-gateway-host"
-  API_GATEWAY_HOST_VALUE: "your-api-gateway-value"
+  API_GATEWAY_HOST_VALUE: "Your Rapid API Key"
+  CODE_HOST_API_KEY: "Your Github API Key"
+  MODEL_API_KEY: "Your OpenAI API Key"
+  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com"
+  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com"
+  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key"
   CONTENT_TYPE_KEY: "Content-Type"
   CONTENT_TYPE_VALUE: "application/json"
 ```
+
+***Only edit the following fields.
+
+**API_GATEWAY_HOST_VALUE**
+
+The Rapid API Key you got from [subscribing](https://rapidapi.com/machtiani-chat-machtiani-chat-default/api/machtiani2/playground/apiendpoint_ad97af86-a38b-455f-a488-c72aab891378).
+
+This is not `API_GATEWAY_HOST_KEY` field. You are placing your Rapid API key in `API_GATEWAY_HOST_VALUE`.
 
 **CODE_HOST_API_KEY**
 
@@ -91,7 +111,7 @@ Your GitHub API key must have repo scopes, so `machtiani` can pull GitHub code t
 
 Your OpenAI API key.
 
-**WARNING: you are responsible for any costs incured for your requests with your OpenAPI key. Although machtiani cli does provide estimates of token usage for storing and syncing as a courtesy, it's only an estimate of input token usage and not ouptut. There are no guarantees as to its accuracy. Furthermore, there is no estimate for input or output for prompt operations. It's recommended you set usage limits directly with OpenAPI to avoid unexpected costs.**
+**WARNING: you are responsible for any costs incured for your requests with your OpenAI API key. Although machtiani cli does provide estimates of token usage for storing and syncing as a courtesy, it's only an estimate of input token usage and not ouptut. There are no guarantees as to its accuracy and it uses a generalized formula to approximate a wide range of tokens from different tokenizers, not specificially OpenAI's. Furthermore, there is no estimate for input or output for prompt operations. It's recommended you set usage limits directly with OpenAPI to avoid unexpected costs.**
 
 The plan is to make it work with other models, especially self-hosted ones.
 
