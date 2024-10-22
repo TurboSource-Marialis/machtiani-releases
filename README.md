@@ -52,6 +52,8 @@
 
    Select the plan you want. After selection, you'll be redirected to your X-Rapid-API-Key (or go [here](https://rapidapi.com/machtiani-chat-machtiani-chat-default/api/machtiani2/playground/apiendpoint_ad97af86-a38b-455f-a488-c72aab891378) to get the key after signing up for a plan).
 
+   ![File Example](images/rapid_api_key_get.png)
+
 ### Install
 
 You can use either `curl` or `wget` to download and run the script in a single command:
