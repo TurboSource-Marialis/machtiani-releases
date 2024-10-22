@@ -176,7 +176,7 @@ machtiani git-sync --branch main --force
 
 ### `git-delete`
 
-The `git-delete` command allows you to remove a repository from the Machtiani system.
+The `git-delete` command allows you to remove a repository from the Machtiani system. It won't delete your local git or remote.
 
 **Usage:**
 ```bash
