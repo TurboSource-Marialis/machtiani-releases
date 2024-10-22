@@ -3,10 +3,14 @@
 
 **Machtiani** is a command-line interface (CLI) tool designed to facilitate code chat and information retrieval from code repositories. It allows users to interact with their codebases by asking questions and retrieving relevant information from files in the project, utilizing language models for processing and generating responses. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
 
+***For now, it only work on GitHub projects you own or have push access to. If you don't have either, use it against a locally cloned fork that you own or have push rights to.***
+
 1. **Add a git project**
    ```bash
    machtiani git-store --branch master
    ```
+
+   Run `machtiani status` to check when it's done. It could take awhile to index and process depending on the size of the git project.
 
 2. **Ask, direct...**
    ```bash
@@ -27,11 +31,15 @@
    ```
    ![File Example](images/keystone-chat-new-prompt-results.png)
 
-5. **Sync up latest changes to project**
+5. **Sync latest commit changes to machtiani**
    ```bash
    machtiani git-sync --branch-name "<default-branch>"
    ```
 
+**Check if you git-store is wrapped up**
+```bash
+   machtiani status
+   ```
 ## Installation Instructions
 
 You can use either `curl` or `wget` to download and run the script in a single command:
