@@ -180,12 +180,12 @@ The `git-delete` command allows you to remove a repository from the Machtiani sy
 
 **Usage:**
 ```bash
-machtiani git-delete --remote <remote_name> [--force]
+machtiani git-delete [--force]
 ```
 
 **Example:**
 ```bash
-machtiani git-delete --remote origin --force
+machtiani git-delete
 ```
 
 ### Ignoring Files with `.machtiani.ignore`
