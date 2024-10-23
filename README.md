@@ -1,7 +1,7 @@
 
 # machtiani
 
-**Machtiani** Machtiani employs a clever document retrieval algorithm that reduces the total code file search to improve efficiency. It can find the right context, out of hundreds (and more) of code files, to answer your prompts. It works unreasonably well. The motivation for building this was out of fustration with chat services that claim to work with an existing codebase but are totally unusable because they all use the same tired strategy of chunking, embedding, and returning trash results. Machtiani feels very native and coupled to the code you point it at. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
+**Machtiani** employs a clever document retrieval algorithm that reduces the total code file search to improve efficiency. It can find the right context, out of hundreds (and more) of code files, to answer your prompts. It works unreasonably well. The motivation for building this was out of fustration with chat services that claim to work with an existing codebase but are totally unusable because they all use the same tired strategy of chunking, embedding, and returning trash results. Machtiani feels very native and coupled to the code you point it at. The aim is to support models aside from OpenAI, including open-source and self-hosted options.
 
 The project will be fully open-sourced, but currently is trying to makes some money to afford to rollout the other half of the vision, on top of polishing, optimizing and speeding up retrieval on very large projects. It's already an order of magnitude better than the current state of code chat services - working well with projects with over 1000 files. We think it will be another order of magnitude from there, so buckle up!
 
