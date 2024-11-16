@@ -20,14 +20,7 @@ Compile your Go CLI tool for the supported platforms (macOS and Linux):
 In the `machtiani/machtiani` folder in the machtiani monorepo:
 
 ```bash
-# Build for macOS (Intel)
-GOOS=darwin GOARCH=amd64 go build -o machtiani-darwin-amd64 ./cmd/machtiani
-
-# Build for macOS (Apple Silicon)
-GOOS=darwin GOARCH=arm64 go build -o machtiani-darwin-arm64 ./cmd/machtiani
-
-# Build for Linux (x86_64)
-GOOS=linux GOARCH=amd64 go build -o machtiani-linux-amd64 ./cmd/machtiani
+./build.sh --release
 ```
 
 ## 3. Create a GitHub Release
@@ -43,8 +36,9 @@ GOOS=linux GOARCH=amd64 go build -o machtiani-linux-amd64 ./cmd/machtiani
 ## 4. Obtain Download URLs
 
 After the release is published, right-click on each binary link in the release and copy the URL. These URLs will look like:
-- `https://github.com/turbosource-marialis/machtiani-releases/releases/download/pre-release-abc1234/machtiani-darwin-amd64`
 - `https://github.com/turbosource-marialis/machtiani-releases/releases/download/pre-release-abc1234/machtiani-linux-amd64`
+- `https://github.com/turbosource-marialis/machtiani-releases/releases/download/pre-release-abc1234/machtiani-darwin-arm64`
+- `https://github.com/turbosource-marialis/machtiani-releases/releases/download/pre-release-abc1234/machtiani-darwin-amd64`
 
 ## 5. Update the Installation Script
 
