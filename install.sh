@@ -49,20 +49,18 @@ chmod +x "$INSTALL_DIR/machtiani"
 CONFIG_FILE="$HOME/.machtiani-config.yml"
 
 # Check if the configuration file already exists
-if [[ -f "$CONFIG_FILE" ]]; then
-    echo "Configuration file already exists at $CONFIG_FILE."
-    echo "If you want to overwrite it, please delete it first or choose a different name."
-else
-    cat <<EOL > "$CONFIG_FILE"
+if [[ -f "$CONFIG_FILE" ]]; then echo "Configuration file already exists at $CONFIG_FILE." echo "If you want to overwrite it, please delete it first or choose a different name." else cat <<EOL > "$CONFIG_FILE"
 environment:
   API_GATEWAY_HOST_VALUE: "" # Your machtiani RapidAPI Key
   MODEL_API_KEY: "" # Your OpenAPI Key
-  CODE_HOST_API_KEY: "" # Your Github API Key (ensure it has repo scopes)
-  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com" # Don't change
-  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com" # Don't change
-  CONTENT_TYPE_KEY: "Content-Type" # Header key for Content-Type # Don't change
-  CONTENT_TYPE_VALUE: "application/json" # Header value for Content-Type # Don't change
-  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key" # Don't change
+  CODE_HOST_API_KEY: "" # Your Github API Key (optional; if using ensure it has repo scopes)
+
+  # DEFAULTS: DON'T CHANGE THE BELOW UNLESS YOU HAVE REASON
+  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com"
+  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com"
+  CONTENT_TYPE_KEY: "Content-Type"
+  CONTENT_TYPE_VALUE: "application/json"
+  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key"
 EOL
 
     echo "Configuration file created at $CONFIG_FILE"
