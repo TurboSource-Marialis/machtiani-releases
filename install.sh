@@ -49,7 +49,11 @@ chmod +x "$INSTALL_DIR/machtiani"
 CONFIG_FILE="$HOME/.machtiani-config.yml"
 
 # Check if the configuration file already exists
-if [[ -f "$CONFIG_FILE" ]]; then echo "Configuration file already exists at $CONFIG_FILE." echo "If you want to overwrite it, please delete it first or choose a different name." else cat <<EOL > "$CONFIG_FILE"
+if [[ -f "$CONFIG_FILE" ]]; then
+    echo "Configuration file already exists at $CONFIG_FILE."
+    echo "If you want to overwrite it, please delete it first or choose a different name."
+else
+    cat <<EOL > "$CONFIG_FILE"
 environment:
   API_GATEWAY_HOST_VALUE: "" # Your machtiani RapidAPI Key
   MODEL_API_KEY: "" # Your OpenAPI Key
