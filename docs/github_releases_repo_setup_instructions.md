@@ -96,8 +96,9 @@ Then in `openapi/`
 node merge.js
 ```
 
-Now `merged-openapi.json` has all endpoint definitions for the proxy.
 
+
+Now `merged-openapi.json` has all endpoint definitions for the proxy, but change the version field value to `3.1.0` to match api-gateway (not the github submodule of machtiani) expectation.
 
 ## 9. Update API Gateway
 
