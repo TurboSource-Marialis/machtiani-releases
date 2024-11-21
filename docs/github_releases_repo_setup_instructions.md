@@ -80,9 +80,47 @@ wget -O - https://yourdomain.com/install.sh | bash
 ```
 ```
 
-## 8. Optional: Automate Releases with GitHub Actions
+## 8. Merge OpenAPI schema
 
-You can set up a GitHub Actions workflow to automatically create new releases whenever you push new code.
+If you haven't already
+
+```
+npm install
+```
+
+Save openapi schema from `http://localhost:5071/openapi.json` and `http://localhost:5070/openapi.json` as `openapi/5070-openapi.json` and `openapi/5071-openapi.json`.
+
+Then in `openapi/`
+
+```
+node merge.js
+```
+
+Now `merged-openapi.json` has all endpoint definitions for the proxy.
+
+
+## 9. Update API Gateway
+
+Not to be confused with `api-gateway` submodule of machtiani, which actually just a reverse proxy right now.
+
+**Definitions > CI/CD**
+
+Update the OpenAPI schema by uploadeding `merged-openapi.json`.
+
+**Definitions > Endpoints**
+
+Delete all endpoints other than
+
+```
+generate-filename
+generate-response
+get-head-oid
+test-pull-access
+status
+add-repository
+fetch-and-checkout
+delete-store
+```
 
 ---
 
