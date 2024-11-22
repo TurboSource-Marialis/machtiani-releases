@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the URL of the latest release (replace with your own repo URL)
-REPO="https://github.com/TurboSource-Marialis/machtiani-releases/releases/download/pre-release-9995650"
+REPO="https://github.com/TurboSource-Marialis/machtiani-releases/releases/download/pre-release-3678e45"
 MACOS_AMD64="machtiani-darwin-amd64"
 MACOS_ARM64="machtiani-darwin-arm64"
 LINUX_AMD64="machtiani-linux-amd64"
