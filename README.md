@@ -98,14 +98,14 @@ Edit the `~/.machtiani-config.yml`. You'll need an Github API key and OpenAI.
 
 ```yaml
 environment:
-  API_GATEWAY_HOST_VALUE: "Your Rapid API Key"
-  CODE_HOST_API_KEY: "Your Github API Key"
   MODEL_API_KEY: "Your OpenAI API Key"
-  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com"
-  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com"
-  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key"
-  CONTENT_TYPE_KEY: "Content-Type"
-  CONTENT_TYPE_VALUE: "application/json"
+  API_GATEWAY_HOST_VALUE: "Your Rapid API Key"
+```
+
+If you want to work with private repos you have access to.
+
+```
+  CODE_HOST_API_KEY: "your_github_key_with_repo_scopes"
 ```
 
 ***Only edit the following fields.***

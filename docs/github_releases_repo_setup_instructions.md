@@ -20,6 +20,7 @@ Compile your Go CLI tool for the supported platforms (macOS and Linux):
 In the `machtiani/machtiani` folder in the machtiani monorepo:
 
 ```bash
+go build -o generate_ldflags generate_ldflags.go
 ./build.sh --release
 ```
 
