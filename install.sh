@@ -57,14 +57,9 @@ else
 environment:
   API_GATEWAY_HOST_VALUE: "" # Your machtiani RapidAPI Key
   MODEL_API_KEY: "" # Your OpenAPI Key
-  CODE_HOST_API_KEY: "" # Your Github API Key (optional; if using ensure it has repo scopes)
 
-  # DEFAULTS: DON'T CHANGE THE BELOW UNLESS YOU HAVE REASON
-  MACHTIANI_URL: "https://machtiani2.p.rapidapi.com"
-  MACHTIANI_REPO_MANAGER_URL: "https://machtiani2.p.rapidapi.com"
-  CONTENT_TYPE_KEY: "Content-Type"
-  CONTENT_TYPE_VALUE: "application/json"
-  API_GATEWAY_HOST_KEY: "X-RapidAPI-Key"
+  # Your Github API Key (optional to chat with your private repos; if using ensure it has repo scopes)
+  #CODE_HOST_API_KEY: ""
 EOL
 
     echo "Configuration file created at $CONFIG_FILE"
