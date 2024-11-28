@@ -237,7 +237,7 @@ go.mod
 
 ## How it Works
 
-Machtiani employs a clever document retrieval algorithm that reduces the total code file search to improve efficiency.
+Machtiani employs a document retrieval algorithm that reduces the total code file search to improve efficiency.
 
 Currenlty, machtiani is tightly coupled to git and employs a clever strategy to compress the file retrieval stage, making it usable on very large projects. There are rough edges (silent errors in places) and estimated input tokens is off when syncing and storing, but it works great in our experience and machtiani project was built with machtiani.
 
